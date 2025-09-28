@@ -1,0 +1,5 @@
+Explain the Fractal-MoE idea in 5 bullets.
+Write a short news-style paragraph about AI safety.
+Summarize the benefits of modular neural networks.
+List 6 creative uses of a tiny LLM.
+Give a concise definition of 'self-distillation'.

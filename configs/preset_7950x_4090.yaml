@@ -1,0 +1,76 @@
+data:
+  source: textdir
+  text_root: "/path/to/your/high_quality_corpus"  # CHANGE THIS
+  text_globs:
+    - "**/*.txt"
+    - "**/*.md"
+    - "**/*.jsonl"
+    - "**/*.json"
+    - "**/*.log"
+    - "**/*.py"
+  include_globs: []
+  exclude_globs:
+    - "**/.git/**"
+    - "**/.cache/**"
+    - "**/__pycache__/**"
+    - "**/node_modules/**"
+    - "**/.venv/**"
+    - "**/*.bin"
+  seq_len: 1536
+  stride: 1536
+  mask_rate: 0.15
+  allow_all: false
+  root: "/"
+  max_file_mb: 32
+  text_shuffle_buffer: 2048
+  text_reshuffle_each_epoch: true
+  text_seed: null
+
+model:
+  vocab_size: 257
+  dim: 512
+  depth: 6      # fanout=10 → 111,111 nodes
+  fanout: 10
+  use_fp16: true
+  droppath_rate: 0.1
+  branch_dropout: 0.1
+  num_experts: 4
+  expert_hidden: 1024
+  expert_top_k: 2
+  router_temperature: 1.0
+  moe_aux_lambda: 0.02
+  capacity_factor: 1.1
+
+train:
+  run_name: "fractal_7950x_4090"
+  device: "cuda"
+  batch_size: 24            # adjust if OOM; try 28 if VRAM allows
+  steps: 50000
+  lr: 0.0015
+  weight_decay: 0.01
+  grad_accum: 1
+  num_workers: 28           # 7950X has 16 cores/32 threads
+  pin_memory: true
+  prefetch_factor: 4
+  persistent_workers: true
+  torch_compile: true
+  tf32: true
+  log_every: 50
+  ckpt_every: 1000
+  out_dir: "runs"
+  compile_mode: default
+  prefetch_gpu: true
+  prefetch_gpu_batches: 2
+  adam_fused: true
+  warmup_steps: 500
+  lr_min: 0.0001
+  cosine_cycle: 50000
+  grad_clip: 1.0
+  use_ema: true
+  ema_decay: 0.999
+
+tokenizer:
+  type: hf
+  name_or_path: bert-base-uncased
+  truncation_side: right
+  pad_to_multiple_of: 128

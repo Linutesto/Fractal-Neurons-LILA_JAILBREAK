@@ -1,0 +1,76 @@
+data:
+  source: textdir
+  text_root: "/path/to/your/high_quality_corpus"  # CHANGE THIS
+  text_globs:
+    - "**/*.txt"
+    - "**/*.md"
+    - "**/*.jsonl"
+    - "**/*.json"
+    - "**/*.log"
+    - "**/*.py"
+  exclude_globs:
+    - "**/.git/**"
+    - "**/.cache/**"
+    - "**/__pycache__/**"
+    - "**/node_modules/**"
+    - "**/.venv/**"
+    - "**/*.bin"
+  seq_len: 2048
+  stride: 2048
+  mask_rate: 0.15
+  text_shuffle_buffer: 2048
+  text_reshuffle_each_epoch: true
+  text_seed: null
+
+model:
+  dim: 384
+  depth: 6
+  fanout: 8
+  use_fp16: true
+  droppath_rate: 0.05
+  branch_dropout: 0.05
+  interconnect: true
+  interconnect_heads: 4
+  interconnect_dropout: 0.05
+  num_experts: 4
+  expert_hidden: 768
+  expert_top_k: 2
+  router_temperature: 1.0
+  moe_aux_lambda: 0.02
+  capacity_factor: 1.1
+
+train:
+  run_name: "fractal_fast_7950x_4090"
+  device: "cuda"
+  batch_size: 32
+  steps: 20000
+  lr: 0.0018
+  weight_decay: 0.01
+  grad_accum: 1
+  num_workers: 28
+  pin_memory: true
+  prefetch_factor: 4
+  persistent_workers: true
+  torch_compile: true
+  tf32: true
+  log_every: 50
+  ckpt_every: 500
+  out_dir: "runs"
+  resume: true
+  ga_enable: false
+  compile_mode: max-autotune
+  prefetch_gpu: true
+  prefetch_gpu_batches: 3
+  adam_fused: true
+  warmup_steps: 300
+  lr_min: 0.0003
+  cosine_cycle: 20000
+  grad_clip: 0.8
+  use_ema: true
+  ema_decay: 0.998
+
+tokenizer:
+  type: hf
+  name_or_path: bert-base-uncased
+  truncation_side: right
+  pad_to_multiple_of: 128

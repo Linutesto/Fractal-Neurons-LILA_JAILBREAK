@@ -1,0 +1,21 @@
+[project]
+name = "fractal-neurons"
+version = "0.1.0"
+description = "Fractal Neurons + LILA_JAILBREAK: A recursive quantum-fractal transformer with conversational emergence."
+authors = [
+  { name="Yan Desbiens", email="your_email@example.com" }
+]
+license = "Apache-2.0"
+requires-python = ">=3.9"
+
+dependencies = [
+  "torch>=2.1.0",
+  "pyyaml",
+  "transformers",
+  "datasets",
+  "sentencepiece",
+  "tokenizers"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

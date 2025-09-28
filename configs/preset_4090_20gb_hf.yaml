@@ -1,0 +1,64 @@
+data:
+  source: textdir   # use local text corpus to avoid network limits; switch to 'hf' if online
+  text_root: "/path/to/english_corpus"   # CHANGE THIS to your local corpus dir
+  text_globs: ["**/*.txt", "**/*.md", "**/*.jsonl", "**/*.json", "**/*.log", "**/*.py"]
+  seq_len: 1536
+  stride: 1536
+  mask_rate: 0.15
+  text_shuffle_buffer: 2048
+  text_reshuffle_each_epoch: true
+  text_seed: null
+  # HF options (only used if you set source: hf)
+  hf_path: wikipedia
+  hf_name: 20220301.en
+  hf_split: train
+  hf_streaming: true
+  hf_text_field: null
+
+model:
+  dim: 512
+  depth: 6
+  fanout: 10
+  use_fp16: true
+  droppath_rate: 0.1
+  branch_dropout: 0.1
+  num_experts: 4
+  expert_hidden: 1024
+  expert_top_k: 2
+  router_temperature: 1.0
+  moe_aux_lambda: 0.02
+  capacity_factor: 1.1
+
+train:
+  run_name: "fractal_4090_20gb"
+  device: "cuda"
+  batch_size: 24
+  steps: 50000
+  lr: 0.0015
+  weight_decay: 0.01
+  grad_accum: 1
+  num_workers: 28
+  pin_memory: true
+  prefetch_factor: 4
+  persistent_workers: true
+  torch_compile: true
+  tf32: true
+  log_every: 50
+  ckpt_every: 1000
+  out_dir: "runs"
+  compile_mode: default
+  prefetch_gpu: true
+  prefetch_gpu_batches: 2
+  adam_fused: true
+  warmup_steps: 500
+  lr_min: 0.0001
+  cosine_cycle: 50000
+  grad_clip: 1.0
+  use_ema: true
+  ema_decay: 0.999
+
+tokenizer:
+  type: hf
+  name_or_path: bert-base-uncased
+  truncation_side: right
+  pad_to_multiple_of: 128

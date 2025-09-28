@@ -1,0 +1,94 @@
+data:
+  source: textdir
+  text_root: /home/yan/Desktop
+  text_globs:
+  - '**/*.txt'
+  - '**/*.md'
+  - '**/*.jsonl'
+  - '**/*.json'
+  - '**/*.log'
+  - '**/*.py'
+  exclude_globs:
+  - '**/.git/**'
+  - '**/.cache/**'
+  - '**/__pycache__/**'
+  - '**/node_modules/**'
+  - '**/.venv/**'
+  - '**/*.bin'
+  seq_len: 1024
+  stride: 1024
+  mask_rate: 0.15
+  text_shuffle_buffer: 2048
+  text_reshuffle_each_epoch: true
+  text_seed: null
+  text_use_cache: true
+  text_refresh_cache: false
+  text_tokenize_in_workers: true
+model:
+  dim: 384
+  depth: 6
+  fanout: 8
+  use_fp16: true
+  droppath_rate: 0.05
+  branch_dropout: 0.05
+  interconnect: true
+  interconnect_heads: 4
+  interconnect_dropout: 0.05
+  num_experts: 4
+  expert_hidden: 768
+  expert_top_k: 2
+  router_temperature: 1.0
+  moe_aux_lambda: 0.02
+  capacity_factor: 1.1
+train:
+  run_name: fractal_fast_7950x_4090
+  device: cuda
+  batch_size: 8
+  steps: 20000
+  lr: 0.0018
+  weight_decay: 0.01
+  grad_accum: 3
+  num_workers: 6
+  pin_memory: true
+  prefetch_factor: 2
+  persistent_workers: true
+  torch_compile: false
+  tf32: true
+  log_every: 50
+  ckpt_every: 500
+  out_dir: runs
+  resume: true
+  ga_enable: true
+  compile_mode: default
+  prefetch_gpu: false
+  prefetch_gpu_batches: 3
+  adam_fused: true
+  warmup_steps: 300
+  lr_min: 0.0003
+  cosine_cycle: 20000
+  grad_clip: 0.8
+  use_ema: true
+  ema_decay: 0.999
+  seed: 1337
+  deterministic: false
+  ga_every: 500
+  ga_population: 16
+  ga_sigma: 0.05
+tokenizer:
+  type: hf
+  name_or_path: runs/fsi_en_v1/tokenizer
+  truncation_side: right
+  pad_to_multiple_of: 128
+
+model:
+  dim: 384
+  depth: 6
+  fanout: 8
+  vocab: 65536
+last_ckpt: runs/fsi_en_v1_evo/ema_final_5000.pt
+init:
+  from_checkpoint: runs/fsi_en_v1_evo/ema_final_5000.pt
+  load_optimizer: false
+  load_step: false
+  load_ema: true
+  strict: false

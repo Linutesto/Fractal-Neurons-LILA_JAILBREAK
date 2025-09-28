@@ -1,0 +1,57 @@
+exp_name: evo_fractal_v1
+seed: 1337
+
+parent_ckpt: runs/fractal_fast_7950x_4090/ema_final_20000.pt
+work_dir: runs/evo
+keep_last: 3
+
+swarm:
+  roles: [planner, reasoner, critic, generator]
+  rounds: 2
+  temperature: 0.8
+  topk: 20
+  max_tokens: 384
+
+distill:
+  prompt_file: prompts/seed_prompts.txt
+  output: runs/distill_samples.jsonl
+  n_samples: 1000
+  temperature: 0.9
+  top_k: 20
+  min_len: 64
+  max_len: 1024
+  seq_len: 768
+  max_new_tokens: 256
+  steps: 8
+  log_path: runs/distill.log
+
+filter:
+  min_chars: 220
+  max_toxicity: 0.30
+  dedup_sim: 0.92
+  out_jsonl: distill_filtered.jsonl
+
+finetune:
+  num_steps: 2000
+  lr: 0.0003
+  warmup: 500
+  ema_decay: 0.9995
+  grad_clip: 1.0
+  seq_len: 1024
+  batch_size: 24
+  use_moe: true
+  num_experts: 4
+  expert_top_k: 2
+
+eval:
+  suite: [reasoning, summary]
+  shots: [0,1]
+  out_json: eval_report.json
+  promote_if:
+    min_avg: 0.3
+    rel_gain_pct: 3.0
+    max_overflow_pct: 12.0
+
+logging:
+  jsonl: true
+  keep_artifacts: true
