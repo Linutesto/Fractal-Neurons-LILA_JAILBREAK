@@ -121,3 +121,10 @@ Perform masked reconstruction or quick loss probes from any checkpoint:
 ```
 
 Switch `--file` for `--text 
+
+## ⚖️ License
+
+This repository is protected under the **Chaos Licensing 2077** by Yan Desbiens.
+Non-commercial research use with attribution is permitted. Commercial/closed-source use requires explicit permission.
+See `chaos_licensing_2077.txt` for full terms.
+
