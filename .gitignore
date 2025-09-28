@@ -1,9 +1,21 @@
+# artefacts d'entraînement / datasets / checkpoints
 runs/
 data/
 tokenizer/
 logs/
 **/*.pt
 **/*.ckpt
+**/*.safetensors
 **/*.bin
+**/*.npz
+**/*.onnx
+**/*.parquet
+**/*.tar
+**/*.gz
+**/*.zip
+**/*.7z
+
+# caches & notebooks
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
