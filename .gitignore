@@ -1,10 +1,9 @@
 runs/
-tokenizer/
 data/
+tokenizer/
 logs/
 **/*.pt
 **/*.ckpt
 **/*.bin
 __pycache__/
 *.pyc
-*.pyo
