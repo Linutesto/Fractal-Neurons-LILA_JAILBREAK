@@ -1,40 +1,27 @@
-# 🧠 Exclude heavy artifacts and sensitive data
-
-# Checkpoints, models, weights
-runs/
-checkpoints/
+# === Checkpoints ===
 *.pt
-*.bin
 *.ckpt
-*.safetensors
+runs/
+**/latest.pt
+**/final_*.pt
+**/ema_final_*.pt
 
-# Tokenizers and vocab artifacts
+# === Tokenizers ===
 tokenizer/
-*.vocab
-*.model
+runs/**/tokenizer/
 
-# Datasets and generated corpora
-datasets/
-data/english_corpus/
-data/conversational_corpus/
-data/mixed_corpus/
-data/ollama_conversations/
-*.jsonl
+# === Datasets & Caches ===
+data/
+HF_DATASETS_CACHE/
+.fractal_cache/
+**/*.jsonl.cache
+*.bin
 
-# Caches and temp
+# === Python junk ===
 __pycache__/
+*.pyc
+*.pyo
+
+# === Logs ===
+logs/
 *.log
-*.tmp
-*.cache/
-*.ipynb_checkpoints/
-
-# Private internal branches
-blacksite_internal/
-
-# OS / IDE junk
-.DS_Store
-*.swp
-*.swo
-.vscode/
-.idea/
-EOF
