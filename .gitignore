@@ -1,27 +1,10 @@
-# === Checkpoints ===
-*.pt
-*.ckpt
 runs/
-**/latest.pt
-**/final_*.pt
-**/ema_final_*.pt
-
-# === Tokenizers ===
 tokenizer/
-runs/**/tokenizer/
-
-# === Datasets & Caches ===
 data/
-HF_DATASETS_CACHE/
-.fractal_cache/
-**/*.jsonl.cache
-*.bin
-
-# === Python junk ===
+logs/
+**/*.pt
+**/*.ckpt
+**/*.bin
 __pycache__/
 *.pyc
 *.pyo
-
-# === Logs ===
-logs/
-*.log
