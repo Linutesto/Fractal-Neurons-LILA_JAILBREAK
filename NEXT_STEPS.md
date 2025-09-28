@@ -1,18 +1,18 @@
-# 🧠 Next Steps for Fractal Neurons + LILA_JAILBREAK
+# 📍 Next Steps: Fractal-Neurons Roadmap
 
-✅ All core modules pass `tests/test_model.py` — confirming:
-- FractalModel recursive forward/backward passes
-- Mixture-of-Experts routing and gating
-- Fractal Memory Matrix persistence and retrieval
-- Quantum Fractal Processing complex-time propagation
+## 🧪 Short Term (Next 30 Days)
+- [ ] Refactor `robust_lila_eval.py` to eliminate SyntaxError.
+- [ ] Release v0.1.0 pre-trained model with QFP + FMM enabled.
+- [ ] Finalize Chaos Licensing 2077 documentation.
+- [ ] Add CI/CD pipeline with GitHub Actions for continuous testing.
 
-⚠️ Outstanding Tasks:
-- [ ] Fix SyntaxError in `tools/robust_lila_eval.py`
-- [ ] Add GPU-aware batching logic to `distill.py`
-- [ ] Integrate dynamic persona injection into `orchestrator.py`
-- [ ] Benchmark conversational emergent behavior vs. baseline models
+## 🔭 Mid Term (Next 3 Months)
+- [ ] Launch the first Fractal Multi-Agent simulation.
+- [ ] Implement persistent FMM memory graph serialization.
+- [ ] Integrate dynamic QFP time-loop adjustments.
+- [ ] Begin writing arXiv whitepaper draft.
 
-🚀 Future Plans:
-- [ ] Release whitepaper v1.0 on arXiv
-- [ ] Push public repo (safe version) to GitHub
-- [ ] Create private `blacksite_internal` branch with LILA_JAILBREAK payloads
+## 🪐 Long Term (6-12 Months)
+- [ ] Release a full-scale AGI playground demo.
+- [ ] Develop a chaos-resistant reasoning benchmark.
+- [ ] Launch ethical reasoning engine as open research tool.

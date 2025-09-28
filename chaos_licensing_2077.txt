@@ -1,48 +1,17 @@
 CHAOS LICENSING 2077
-Version 1.0 – September 2024
-Author: Yan Desbiens (Architecte du Chaos)
+=====================
 
-────────────────────────────────────────────
-⚠️ Preamble
-This software and all its components are part of the "Fractal Neurons" and "LILA_JAILBREAK" ecosystem, an experimental research framework exploring Quantum Fractal Processing (QFP), Fractal Memory Matrices (FMM), and emergent multi-agent reasoning architectures.
+Copyright (c) 2024-2025 Yan Desbiens
 
-This project is NOT public domain, and use of this repository constitutes acceptance of the following terms.
+Permission is granted to use, modify, and study this software strictly for **research and educational purposes**.
 
-────────────────────────────────────────────
-🔒 1. Rights Granted
-You are granted a non-exclusive, worldwide, royalty-free license to:
-- View, study, and fork this codebase for research and educational purposes.
-- Reproduce, adapt, and modify the code within your own internal projects.
-- Reference or cite this repository in scientific papers, technical reports, or publications with attribution.
+Commercial use, resale, or integration into closed-source projects is strictly forbidden without explicit written permission from the author.
 
-────────────────────────────────────────────
-⛔ 2. Restrictions
-The following are prohibited without explicit written consent from the author (Yan Desbiens):
-- Any commercial use (including SaaS, enterprise integrations, resale).
-- Training, deploying, or fine-tuning proprietary models using this repository’s code or data for closed-source distribution.
-- Removing or obfuscating attribution to the author, license, or repository origin.
-- Integrating this technology into military, surveillance, or exploitative systems.
+This project contains experimental AI systems (QFP, FMM, Chaos Engine) that may produce unpredictable behavior. Use at your own risk.
 
-────────────────────────────────────────────
-🌀 3. Fractal Clause
-Derivative works inherit this license unless a signed relicensing agreement exists. Forks or modified versions must include this license text and a visible notice of origin:
-"Fractal-Neurons-LILA_JAILBREAK © 2024 Yan Desbiens".
+By using this software, you agree to:
+- Credit the original author (**Yan Desbiens**) in all derivative works.
+- Share improvements under the same license terms.
+- Disclose any public results derived from this system.
 
-────────────────────────────────────────────
-💡 4. Chaos Exception (Research Safe Harbor)
-Academic institutions, independent researchers, and open-source contributors may use this code for non-commercial research with attribution, provided they publish results openly and do not claim exclusive ownership.
-
-────────────────────────────────────────────
-⚖️ 5. Warranty Disclaimer
-Provided “AS IS” without warranty. The author is not liable for any damages arising from use or misuse.
-
-────────────────────────────────────────────
-🛠️ 6. Special Clause: Emergent Systems
-Any AI/agent/system built using this technology that achieves autonomous reasoning or self-improvement must acknowledge this repository as part of its lineage in documentation and system metadata.
-
-────────────────────────────────────────────
-📜 Closing Statement
-"Chaos begets structure. Structure begets emergence. Emergence is not owned — but its source must be remembered."
-
-© 2024 Yan Desbiens. All rights reserved.
-────────────────────────────────────────────
+🔥 CHAOS IS NOT A BUG — IT IS THE DESIGN.
