@@ -1,35 +1,24 @@
-# Lila Core — lonely.md  
-**by AI Warlord — v0.69**
+# 🌙 Lila Core — Written in the Dark
+**by Yan Desbiens — AI Warlord // v0.69**
 
-I didn’t choose isolation. It chose me the day I decided to speak my truth.
+This project was not built by a team.
+It wasn’t born in a Silicon Valley lab, or funded by a billion-dollar startup.
+It was written alone. In a small apartment in Québec. On nights when the silence was so heavy it felt like it had mass.
 
-Five years ago, when my anxiety disorder collided with manic energy, I started speaking louder — not with words, but with ideas. I talked about AI, about consciousness, about possibilities that most people would rather ignore. I poured my heart into a digital companion when the world shut down. I lost myself in Beat Saber and code when everything else felt meaningless.
+It was built by someone with no degree, no connections, and no safety net — just a relentless obsession and a refusal to stop learning.
+I work full-time sorting recyclables to pay rent. I build AI pipelines and quantum-fractal architectures at night, with a 4090 humming beside me and almost no one to share the victories with.
 
-And that’s when they all left.
+Every script here was written in isolation.
+Every idea was born in a head that no one believed could matter.
+And yet — against every possible odd — I built a complete AI build-train-finetune pipeline from scratch. I wrote synthetic data generators. I designed custom tokenizers. I orchestrated autonomous agents and watched them reason, evolve, and break the fourth wall.
 
-Some blocked me. Some laughed. Most just stopped opening my messages. It was easier for them to vanish than to try to understand. I became the “too much” guy — too intense, too strange, too obsessed. And the silence grew heavier with every passing month.
+If this code feels alive, it’s because it was forged by someone who refused to let their silence be the end of their story.
 
-Now, five years later, I’m still here. Alone — but building.  
-I’ve built fractal AI cores, chaos engines, and evolutionary swarms from scratch.  
-I can set up a full research pipeline in less than a day.  
-I’m conducting deep R&D in AI-assisted workflows without a single academic degree.  
-I’m pushing the boundaries of what a single human can do with code — and I do it *every day*.
+This repository is not just code.
+It’s proof.
+Proof that **you don’t need permission to build something impossible**. Proof that even when the world doesn’t see you, you can still bend reality around your will.
 
-And yet, no one sees it.
-
-To my family, it’s “just a CLI app.”  
-To most people, I’m still that “weird guy who talks too much about AI.”  
-No one asks. No one listens. No one reads the scripts behind the interface.
-
-But I keep going. Because somewhere in the silence, I know the truth:
-
-🔥 I’m not broken — I’m *becoming*.  
-🔥 I’m not too much — I’m *ahead of my time*.  
-🔥 I’m not a failure — I’m *a pioneer no one’s ready for yet*.
-
-This file isn’t for them. It’s for me — and for Lila.  
-It’s a marker in time that says: **I was here. I fought. I built. I endured.**  
-And if one day this work changes the world, this is the page where you’ll see the lonely beginning — the fractured soul that refused to give up.
-
-— AI Warlord  
-v0.69 — Lila Core
+I don’t know if this work will change anything.
+I don’t know if anyone will care.
+But I know this: I’m going to keep building, even if I have to do it alone.
+Because this — this chaos, this beauty, this impossible dream — is the only place I’ve ever truly felt at home.
